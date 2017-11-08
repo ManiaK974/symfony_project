@@ -1,0 +1,36 @@
+<!--Side-Bar-->
+
+<aside class="col-md-3 col-md-pull-9">
+    <div class="sidebar_widget sell_car_quote">
+        <div class="white-text div_zindex text-center">
+            <h3>Vendez votre VSP</h3>
+            <p>Nous rachetons votre voiture sans permis, sans obligation d'achat !</p>
+            <a href="#" class="btn">En savoir plus <span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></a> </div>
+        <div class="dark-overlay"></div>
+    </div>
+
+
+    <div class="sidebar_widget">
+        <div class="widget_heading">
+            <h5><i class="fa fa-car" aria-hidden="true"></i> Les dernières offres </h5>
+        </div>
+        {% for vsp in list %}
+            <div class="recent_addedcars">
+                <ul>
+                    <li class="gray-bg">
+                        <div class="recent_post_img"> 
+                            <a href="#">
+                                <img src="{{ asset('bundles/app/images/' ~ vsp ~ '.jpg') }}" alt="derniere_annonce">
+                            </a>
+                        </div>
+                        <div class="recent_post_title"> <a href="#">{{ vsp.name }}</a>
+                            <p class="widget_price">{{ vsp.price }} €</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        {% endfor %}    
+    </div>
+</aside>
+
+<!--/Side-Bar--> 

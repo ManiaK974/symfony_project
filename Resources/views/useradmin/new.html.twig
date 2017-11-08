@@ -1,0 +1,57 @@
+{% extends 'useradmin/admin_base.html.twig' %}
+
+{% block body %}
+    <body class="hold-transition register-page">
+        <div class="register-box">
+            {% for label, flashes in app.session.flashbag.all %}
+                {% for flash in flashes %}
+                    <div class="alert alert-{{ label }}">
+                        {{ flash }}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+            <div class="register-logo">
+                <b>MonVsp.com</b> Administration
+            </div>
+
+            <div class="register-box-body">
+                <p class="login-box-msg">Enregistrer un nouvel admin</p>
+
+                {{ form_start(form) }}
+                <div class="form-group has-feedback">
+                    {{form_widget(form.login, {'attr': {'class': 'form-control', 'placeholder':'Login (6 caractères mini.)'}}) }}
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                    {{ form_errors(form.login) }}
+                </div>
+                <div class="form-group has-feedback">
+                    {{form_widget(form.mail, {'attr': {'class': 'form-control', 'placeholder':'E-mail'}}) }}
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                    {{ form_errors(form.mail) }}
+                </div>
+                <div class="form-group has-feedback">
+                    {{form_widget(form.password.first, {'attr': {'class': 'form-control', 'placeholder':'Mot de passe'}}) }}
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+
+                </div>
+                <div class="form-group has-feedback">
+                    {{form_widget(form.password.second, {'attr': {'class': 'form-control', 'placeholder':'Confirmez votre mot de passe'}}) }}
+                    <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+                    {{ form_errors(form.password.first) }}
+                </div>
+                <div class="row">
+                    <div class="col-xs-8">
+                        <a href="{{ path('admin_site_index') }}" class="text-center">Je possède déjà un compte administrateur</a>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-xs-4">
+                        <button type="submit" class="btn btn-primary btn-block btn-flat" formnovalidate>Valider</button>
+                    </div>
+                    <!-- /.col -->
+                </div>
+                {{ form_end(form) }}
+            </div>
+            <!-- /.form-box -->
+        </div>
+        <!-- /.register-box -->
+    </body>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% if vsps|length < 1 %}
+    <div class="product-listing-m gray-bg">
+        Il n'y a aucuns véhicule(s) neuf(s) à la vente pour le moment.
+    </div>
+{% else %}
+    <div class="result-sorting-wrapper">
+        <div class="sorting-count">
+            <p> <span>{{ vsps | length }} Véhicule(s) Neuf(s) Trouvé(s)</span></p>
+        </div>
+        <div class="result-sorting-by">
+            <p>Trier par:</p>
+            <form action="#" method="post">
+                <div class="form-group select sorting-select">
+                    <select class="form-control ">
+                        <option>Prix (croissants)</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+    </div>
+    {% for vsp in vsps %}
+        <div class="product-listing-m gray-bg">
+            <div class="product-listing-img"> 
+                <a href="#">
+                    <img src="{{ asset('bundles/app/images/' ~ vsp ~ '.jpg') }}" alt="Vsp Neuf Ligier" class="img-responsive">
+                </a>
+                <div class="label_icon"><b> -{{ vsp.discount }}% </b></div>
+            </div>
+            <div class="product-listing-content">
+                <h5><a href="#"> {{ vsp.name }} </a></h5>
+                <p class="list-price"> {{ vsp.price }} € (Hors frais annexes*)</p>
+                <ul>
+                    <li><i class="fa fa-road" aria-hidden="true"></i>{{ vsp.kms }} kms</li>
+                    <li><i class="fa fa-calendar" aria-hidden="true"></i>{{ vsp.dateMec|date('d-m-Y') }}</li>
+                    <li><i class="fa fa-car" aria-hidden="true"></i>{{ vsp.fuelconso }} L/100</li>
+                    <li><i class="fa fa-car" aria-hidden="true"></i>{{ vsp.engineType }}</li>
+                </ul>
+                <a href="#" class="btn">En savoir plus <span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></a>
+                <div class="car-location"><span><i class="fa fa-map-marker" aria-hidden="true"></i> Disponible sous 4 semaines</span></div>
+            </div>
+        </div>
+    {% endfor %}
+{% endif %}
+

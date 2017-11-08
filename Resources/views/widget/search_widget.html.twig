@@ -1,0 +1,29 @@
+<!-- Filter-Form -->
+<section id="filter_form" class="gray-bg">
+    <div class="container">
+        <h3>Trouvez la voiture sans permis de vos rêves<span> (C'est facile)</span></h3>
+        <div class="row">
+            {{ form_start(form) }}
+            <div class="form-group col-md-4 col-sm-6 black_input">
+                {{form_widget(form.brand, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="form-group col-md-4 col-sm-6 black_input">
+                {{form_widget(form.model, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="form-group col-md-4 col-sm-6 black_input">
+                {{form_widget(form.type, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="form-group col-md-8 col-sm-6 black_input">
+                <label class="form-label"><b>Fourchette de prix</b></label>
+                <input id="price_range" type="text" class="span2" value="" data-slider-min="500" data-slider-max="16000" data-slider-step="500" data-slider-value="[2500,8500]"/>
+            </div>
+            {{ form_end(form)}}
+            <div class="form-group col-md-4 col-sm-6">
+                <input type="submit" class="btn btn-block" value="Rechercher une voiture sans permis ">
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- /Filter-Form-->
+

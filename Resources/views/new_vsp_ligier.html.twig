@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <!--Page Header-->
+    <section class="page-header listing_page">
+        <div class="container">
+            <div class="page-header_wrap">
+                <div class="page-heading">
+                    <h1>Voitures sans permis neuves</h1>
+                </div>
+                <ul class="coustom-breadcrumb">
+                    <li><a href="{{ path('homepage') }}">Accueil</a></li>
+                    <li>Ligier</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Dark Overlay-->
+        <div class="dark-overlay"></div>
+    </section>
+    <!-- /Page Header--> 
+
+    <section class="listing-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 col-md-push-3">
+
+                    {#{{ render(controller('AppBundle:Vsp:searchToolbarNewVsp')) }}#}
+
+                    {{ render(controller('AppBundle:Vsp:getListNewVsp')) }}
+
+                </div>
+
+                {{ render(controller('AppBundle:Vsp:getListLastNewVsp')) }}
+                
+            </div>
+    </section>
+
+    {% block javascripts %}
+        {% javascripts 
+                '@js' 
+        %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+    {% endblock %}
+
+{% endblock %}
+

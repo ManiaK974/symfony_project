@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="fr">
+    {% include 'partials/head.html.twig' %}
+    <body>
+        {% include 'partials/header.html.twig' %}
+        {% block body %}
+            {% block sidebar %}
+            {%endblock%}
+        {% endblock %}
+        {% include 'partials/footer.html.twig' %}
+    </body>
+</html>

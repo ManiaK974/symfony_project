@@ -1,0 +1,325 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <!-- Banners -->
+    <section id="banner" class="banner-section">
+        <div class="container">
+            <div class="div_zindex">
+                <div class="row">
+                    <div class="col-md-5 col-md-push-7">
+                        <div class="banner_content">
+                            <h1>Trouvez la voiture idéale</h1>
+                            <p>Achetez votre voiture sans permis <b>sans bouger de chez vous</b></p>
+                            <a href="#" class="btn">Tous nos véhicules <span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></a> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dark-overlay-1"></div>
+    </section>
+
+    <!--About-us-->
+    <section id="about_us" class="section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2><span>Bienvenue sur </span>MonVsp.com</h2>
+                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. </p>
+            </div>
+
+            <div class='row'>
+                <div class='col-md-3 col-sm-6'>
+                    <div class='about_info'>
+                        <div class='icon_box'>
+                            <i class='fa fa-money' aria-hidden='true'></i>
+                        </div>
+                        <h5>Economisez plus</h5>
+                        <p>Profitez pendant toute l'année de nombreuses réductions sur les voitures sans permis neuves et d'occasion.</p>
+                    </div>
+                </div>
+
+                <div class='col-md-3 col-sm-6'>
+                    <div class='about_info'>
+                        <div class='icon_box'>
+                            <i class='fa fa-thumbs-o-up' aria-hidden='true'></i>
+                        </div>
+                        <h5>Achetez avec sérénité</h5>
+                        <p>Tous nos véhicules sans permis sont contrôlés et garantis pièces et main d'oeuvre, et le paiement est 100% sécurisé.</p>
+                    </div>
+                </div>
+
+                <div class='col-md-3 col-sm-6'>
+                    <div class='about_info'>
+                        <div class='icon_box'>
+                            <i class='fa fa-clock-o' aria-hidden='true'></i>
+                        </div>
+                        <h5>Gagnez du temps</h5>
+                        <p>Vous n'avez plus besoin de passer des jours entiers dans les garages à la recherche de la perle rare.</p>
+                    </div>
+                </div>
+
+                <div class='col-md-3 col-sm-6'>
+                    <div class='about_info'>
+                        <div class='icon_box'>
+                            <i class='fa fa-list' aria-hidden='true'></i>
+                        </div>
+                        <h5>Soyez mieux conseillé</h5>
+                        <p>Bénéficiez en plus de nombreux conseils mécaniques, pratiques et juridiques grâce à nos divers spécialistes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/About-us-->
+
+{{ render(controller('AppBundle:Vsp:search')) }}
+
+<!-- New and Used Car Research -->
+<section class="about-us-section section-padding">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2>Welcome <span>to CarForYou</span></h2>
+            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-sm-6">
+                <div class="looking-car">
+                    <div class="looking-cat-image"> 
+                        {% image '@AppBundle/Resources/public/images/346x224.png' %}
+                        <img src="{{ asset_url }}" alt="VSP neuf" />
+                        {% endimage %}
+                    </div>
+                    <div class="looking-car-content">
+                        <h3><span>Envie d'une </span> voiture neuve ?</h3>
+                        <p>Faites votre choix parmi tous les modèles constructeurs disponibles. Profitez de remises allant jusqu'à -20% !</p>
+                        <a href="{{ path('new_vsp') }}" class="btn">View Listing<i class="fa fa-chevron-circle-right" aria-hidden="true"></i></a> </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-sm-6">
+                <div class="looking-car">
+                    <div class="looking-cat-image"> 
+                        {% image '@AppBundle/Resources/public/images/346x224.png' %}
+                        <img src="{{ asset_url }}" alt="VSP occasion"/>
+                        {% endimage %}
+                    </div>
+                    <div class="looking-car-content">
+                        <h3><span>Besoin d'un </span> vsp d'occasion</h3>
+                        <p>Choisissez votre future voiture sans permis d'occasion et bénéficiez des meilleurs prix du marché !</p>
+                        <a href="{{ path('occaz_vsp') }}" class="btn">View Listing<i class="fa fa-chevron-circle-right" aria-hidden="true"></i></a> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /New and Used Car Research --> 
+<!--Testimonial -->
+<section class="section-padding testimonial-section parallex-bg">
+    <div class="container div_zindex">
+        <div class="section-header white-text text-center">
+            <h2><span>Ce que pensent</span> nos clients</h2>
+            <p>La <b>satisfaction clientèle</b> étant notre principale priorité, découvrez ci-dessous les derniers commentaires laissés par nos clients</p>
+        </div>
+        <div class="row">
+            <div id="testimonial-slider">
+                <div class="testimonial-m">
+                    <div class="testimonial-img"> 
+                        {% image '@AppBundle/Resources/public/images/avis_client.jpg' %}
+                        <img src="{{ asset_url }}" alt="Article de blog" class="img-responsive">
+                        {% endimage %}
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="testimonial-heading">
+                            <h5>Kévin Mèche</h5>
+                            <span class="client-designation">Ligier JS50 Sport Neuve</span> </div>
+                        <p>J'ai été agréablement surpris par leur professionnalisme, la rapidité de livraison et les prix très intéressants qu'ils proposent. Je recommande ce site à tout le monde.</p>
+                    </div>
+                </div>
+                <div class="testimonial-m">
+                    <div class="testimonial-img"> 
+                        {% image '@AppBundle/Resources/public/images/avis_client2.jpg' %}
+                        <img src="{{ asset_url }}" alt="Article de blog" class="img-responsive">
+                        {% endimage %}
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="testimonial-heading">
+                            <h5>Paul Estros</h5>
+                            <span class="client-designation">Aixam City Occasion</span> </div>
+                        <p>Suite à un accident avec mon ancien vsp, il me fallait une voiture sans permis fiable, révisée et surtout garantie. Cela fait maintenant 4 mois que je l'ai et aucuns problèmes à signaler. </p>
+                    </div>
+                </div>
+                <div class="testimonial-m">
+                    <div class="testimonial-img"> 
+                        {% image '@AppBundle/Resources/public/images/avis_client3.jpg' %}
+                        <img src="{{ asset_url }}" alt="Article de blog" class="img-responsive">
+                        {% endimage %}
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="testimonial-heading">
+                            <h5>Jessica Dutertre</h5>
+                            <span class="client-designation">Ligier X-TOO Occasion</span> </div>
+                        <p>Equipe professionnelle, bon rapport qualité/prix, véhicule conforme à mes attentes. Merci !</p>
+                    </div>
+                </div>
+                <div class="testimonial-m">
+                    <div class="testimonial-img">
+                        {% image '@AppBundle/Resources/public/images/avis_client4.jpg' %}
+                        <img src="{{ asset_url }}" alt="Article de blog" class="img-responsive">
+                        {% endimage %}
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="testimonial-heading">
+                            <h5>Pierre Ardouin</h5>
+                            <span class="client-designation">Casalini M14 Neuve</span> </div>
+                        <p>Je suis très content de mon Vsp que j'ai acheté neuf. Je me suis fait livrer chez moi, et dans les temps. Rien à redire.</p>
+                    </div>
+                </div>
+                <div class="testimonial-m">
+                    <div class="testimonial-img"> 
+                        {% image '@AppBundle/Resources/public/images/avis_client5.jpg' %}
+                        <img src="{{ asset_url }}" alt="Article de blog" class="img-responsive">
+                        {% endimage %}
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="testimonial-heading">
+                            <h5>Pierrick Praec</h5>
+                            <span class="client-designation">Aixam A721 Occasion</span> </div>
+                        <p>Plutôt que d'acheter un scooter, mes parents ont préféré que je prenne une voiture sans permis. Je suis plus en sécurité, et très content du service de l'équipe de MonVsp.com Et mes parents du prix.</p>
+                    </div>
+                </div>
+                <div class="testimonial-m">
+                    <div class="testimonial-img"> 
+                        {% image '@AppBundle/Resources/public/images/avis_client6.jpg' %}
+                        <img src="{{ asset_url }}" alt="Article de blog" class="img-responsive">
+                        {% endimage %}
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="testimonial-heading">
+                            <h5>Marie Renault</h5>
+                            <span class="client-designation">Chatenet CH26 Occasion</span> </div>
+                        <p>La chatenet que j'ai achetée faisait parti des moins chères que j'ai vu. Je suis très contente des services proposés, et de la réactvité de mon conseiller MonVsp.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Dark Overlay-->
+    <div class="dark-overlay"></div>
+</section>
+<!-- /Testimonial--> 
+<!-- Help-Number--> 
+<section id="help" class="section-padding">
+    <div class="container">
+        <div class="div_zindex white-text text-center">
+            <h2>Vous avez des questions ?<br>
+                <h2>0820 315 315 (numéro vert)</h2>
+        </div>
+    </div>
+
+    <!-- Dark-overlay-->    
+    <div class="dark-overlay"></div>
+</section>
+<!-- /Help-Number--> 
+
+
+<!--Blog -->
+<section class="section-padding">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2>Les derniers articles postés sur le blog </h2>
+            <p>Pour que vous ne manquiez pas les dernières actualités concernant les voitures sans permis et les derniers articles publiés sur notre blog, nous avons sélectionné pour vous la liste des 3 derniers postés. Bonne lecture ! </p>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-4">
+                <article class="blog-list">
+                    <div class="blog-info-box"> 
+                        <div class="share_article">
+                            <p><i class="fa fa-share-alt" aria-hidden="true"></i></p>
+                            <ul>
+                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                        <a href="#">{% image '@AppBundle/Resources/public/images/600x380.jpg' %}
+                            <img src="{{ asset_url }}" alt="Article de blog" class="img-responsive">
+                            {% endimage %}
+                        </a>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-tags" aria-hidden="true"></i>Latest Cars</a></li>
+                            <li><i class="fa fa-calendar" aria-hidden="true"></i>15 Nov 2016</li>
+                            <li><a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i>10 Comments</a></li>
+                        </ul>
+                    </div>
+                    <div class="blog-content">
+                        <h5><a href="#">But I must explain to you how all this mistaken idea.</a></h5>
+                        <p>expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because</p>
+                        <a href="#" class="btn-link">Read More <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a> </div>
+                </article>
+            </div>
+            <div class="col-md-4 col-sm-4">
+                <article class="blog-list">
+                    <div class="blog-info-box"> 
+                        <div class="share_article">
+                            <p><i class="fa fa-share-alt" aria-hidden="true"></i></p>
+                            <ul>
+                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                        <a href="#">{% image '@AppBundle/Resources/public/images/600x380.jpg' %}
+                            <img src="{{ asset_url }}" alt="Article de blog" class="img-responsive">
+                            {% endimage %}
+                        </a>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-tags" aria-hidden="true"></i>Latest Cars</a></li>
+                            <li><i class="fa fa-calendar" aria-hidden="true"></i>10 Nov 2016</li>
+                            <li><a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i>21 Comments</a></li>
+                        </ul>
+                    </div>
+                    <div class="blog-content">
+                        <h5><a href="#">On the other hand, we denounce with righteous indignation.</a></h5>
+                        <p>expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because</p>
+                        <a href="#" class="btn-link">Read More <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a> </div>
+                </article>
+            </div>
+            <div class="col-md-4 col-sm-4">
+                <article class="blog-list">
+                    <div class="blog-info-box"> 
+                        <div class="share_article">
+                            <p><i class="fa fa-share-alt" aria-hidden="true"></i></p>
+                            <ul>
+                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                        <a href="#">{% image '@AppBundle/Resources/public/images/600x380.jpg' %}
+                            <img src="{{ asset_url }}" alt="Article de blog" class="img-responsive">
+                            {% endimage %}
+                        </a>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-tags" aria-hidden="true"></i>Latest Cars</a></li>
+                            <li><i class="fa fa-calendar" aria-hidden="true"></i>05 Nov 2016</li>
+                            <li><a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i>18 Comments</a></li>
+                        </ul>
+                    </div>
+                    <div class="blog-content">
+                        <h5><a href="#">Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</a></h5>
+                        <p>expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because</p>
+                        <a href="#" class="btn-link">Read More <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a> </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /Blog--> 
+
+
+
+{% block javascripts %}
+    {% javascripts 
+                '@js' 
+    %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+
+{% endblock %}

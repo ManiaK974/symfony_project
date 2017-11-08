@@ -1,0 +1,253 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <!--Page Header-->
+    <section class="page-header aboutus_page">
+        <div class="container">
+            <div class="page-header_wrap">
+                <div class="page-heading">
+                    <h1>A Propos de nous</h1>
+                </div>
+                <ul class="coustom-breadcrumb">
+                    <li><a href="{{ path('homepage') }}">Accueil</a></li>
+                    <li>A propos de nous</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Dark Overlay-->
+        <div class="dark-overlay-2"></div>
+    </section>
+    <!-- /Page Header--> 
+    <!--About-us-->
+    <section class="about_us section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2><span>Bienvenue sur </span>MonVsp.vom</h2>
+                <p>Toute l'équipe de <b>MonVsp.com</b> vous souhaite la bienvenue sur son site internet.<br>
+                    Cette section a pour vocation de vous présenter qui nous sommes, ce que nous faisons et pourquoi nous le faisons.</p>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <div class="about_content row">
+                        <div class="col-md-5 col-sm-4 col-xs-4">
+                            <div class="about_img"> 
+                                {% image '@AppBundle/Resources/public/images/who_we_are_img.jpg' %}
+                                <img src="{{ asset_url }}" alt="Qui sommes-nous" />
+                                {% endimage %}
+                            </div>
+                        </div>
+                        <div class="col-md-7 col-sm-8 col-xs-8">
+                            <h3><span>Qui </span>somme nous ?</h3>
+                            <p>Nous sommes une équipe de spécialistes automobiles et de voitures sans permis. 
+                                Passionnés par ce que nous faisons, nous avons à coeur de tout mettre en oeuvre pour satisfaire vos besoins.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="about_content row">
+                        <div class="col-md-5 col-sm-4 col-xs-4">
+                            <div class="about_img"> 
+                                {% image '@AppBundle/Resources/public/images/mission_img.jpg' %}
+                                <img src="{{ asset_url }}" alt="Qui sommes-nous" />
+                                {% endimage %}
+                            </div>
+                        </div>
+                        <div class="col-md-7 col-sm-8 col-xs-8">
+                            <h3><span>Notre </span>mission</h3>
+                            <p>Parce que vous avons plus qu'une vision, notre mission est de révolutionner l'univers des voitures sans permis en vous proposant une expérience d'achat unique en son genre, toujours au plus près de vous.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="about_content row">
+                        <div class="col-md-5 col-sm-4 col-xs-4">
+                            <div class="about_img"> 
+                                {% image '@AppBundle/Resources/public/images/constat_img.jpg' %}
+                                <img src="{{ asset_url }}" alt="Qui sommes-nous" />
+                                {% endimage %}
+                            </div>
+                        </div>
+                        <div class="col-md-7 col-sm-8 col-xs-8">
+                            <h3><span>Notre </span>constat</h3>
+                            <p>Le constat est simple : aucune réglementation, ou presque, n'est appliquée autour de la vente de VSP ou même de pièces détachées. Ce qui peut faire de vous des "proies faciles"
+                                pour toutes sortes de "requins" présents dans ce grand bassin.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="about_content row">
+                        <div class="col-md-5 col-sm-4 col-xs-4">
+                            <div class="about_img">
+                                {% image '@AppBundle/Resources/public/images/solution_img.jpg' %}
+                                <img src="{{ asset_url }}" alt="Qui sommes-nous" />
+                                {% endimage %}
+                            </div>
+                        </div>
+                        <div class="col-md-7 col-sm-8 col-xs-8">
+                            <h3><span>Nos </span> solutions </h3>
+                            <p> Notre solution l'est tout autant : nous vous garantissons les meilleurs prix du marché, tout en vous proposant des voitures sans permis drastiquement
+                                contrôlées, garanties et fidèles aux photos publiées.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /About-us--> 
+
+    <!-- Why-Choose-Us-->
+    <section class="why_choose_us section-padding gray-bg">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Pourquoi <span>nous faire confiance</span></h2>
+                <p>Car en plus de vous faire profiter de nombreuses offres plus folles les une ques les autres, nous vous proposons une section entière dédiée au <b>Consulting</b>. 
+                    Disposez d'un <b>accompagnement total</b> par notre équipe d'experts pendant les différentes phases de votre projet.</p>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <div class="listing_box">
+                        <h5><i class="fa fa-wrench" aria-hidden="true"></i> De nombreux conseils mécaniques et pratiques</h5>
+                        <p>Découvrez quelques astuces et bons plans concernant la remise en état d'un VSP d'occasion.</p>
+                    </div>
+                    <div class="listing_box">
+                        <h5><i class="fa fa-folder-open" aria-hidden="true"></i> Des dossiers complets sur l'univers sans permis</h5>
+                        <p>Restez informé en toutes circonstances sur tous les sujets concernants les VSP : sorties attendues, évènements, bonnes affaires, etc...</p>
+                    </div>
+                    <div class="listing_box">
+                        <h5><i class="fa fa-balance-scale" aria-hidden="true"></i> Des informations sur la législation en vigueur</h5>
+                        <p>Parce qu'il n'est pas forcément évident de s'y retrouver au niveau legislatif, nous vous aidons à y voir plus clair.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="video_box">
+                        <div>
+                            {% image '@AppBundle/Resources/public/images/conseil_img.jpg' %}
+                            <img src="{{ asset_url }}" alt="Conseils" />
+                            {% endimage %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /Why-Choose-Us--> 
+
+    <!-- Fun-Facts-->
+    {#<section class="fun-facts-section">
+        <div class="container div_zindex">
+            <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                    <div class="fun-facts-m">
+                        <div class="cell">
+                            <h2><i class="fa fa-calendar" aria-hidden="true"></i>+20</h2>
+                            <p>VSP Neufs disponibles</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                    <div class="fun-facts-m">
+                        <div class="cell">
+                            <h2><i class="fa fa-car" aria-hidden="true"></i>1200+</h2>
+                            <p>New Cars For Sale</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                    <div class="fun-facts-m">
+                        <div class="cell">
+                            <h2><i class="fa fa-car" aria-hidden="true"></i>1000+</h2>
+                            <p>Used Cars For Sale</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                    <div class="fun-facts-m">
+                        <div class="cell">
+                            <h2><i class="fa fa-user-circle-o" aria-hidden="true"></i>600+</h2>
+                            <p>Satisfied Customers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Dark Overlay-->
+        <div class="dark-overlay"></div>
+    </section>#}
+    <!-- /Fun-Facts--> 
+
+    <!-- Meet-the-Team-->
+    <section class="meet_team section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Rencontrez <span>l'équipe</span></h2>
+                <p>Voici un petit tour de table afin de vous présenter 3 membres faisant partie de l'équipe de MonVsp.com</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-4">
+                    <div class="team_member">
+                        <div class="team_img"> 
+                            {% image '@AppBundle/Resources/public/images/our_team_1.jpg' %}
+                            <img src="{{ asset_url }}" alt="Membre équipe" />
+                            {% endimage %}
+                            <div class="team_more_info">
+                                <div class="info_wrap">
+                                    <p><span>Email:</span> <a href="mailto:vanessa.lemarchand@monvsp.com">vanessa.lemarchand@monvsp.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team_info">
+                            <H6>Vanessa Lemarchand</H6>
+                            <P>Community Manager</P>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <div class="team_member">
+                        <div class="team_img"> 
+                            {% image '@AppBundle/Resources/public/images/our_team_2.jpg' %}
+                            <img src="{{ asset_url }}" alt="Membre équipe" />
+                            {% endimage %}
+                            <div class="team_more_info">
+                                <div class="info_wrap">
+                                    <p><span>Email:</span> <a href="mailto:andre.cho@monvsp.com">andre.chosse@monvsp.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team_info">
+                            <H6>André Chosse</H6>
+                            <P>Web Developper</P>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <div class="team_member">
+                        <div class="team_img"> 
+                            {% image '@AppBundle/Resources/public/images/700x450.jpg' %}
+                            <img src="{{ asset_url }}" alt="Membre équipe" />
+                            {% endimage %}
+                            <div class="team_more_info">
+                                <div class="info_wrap">
+                                   <p><span>Email:</span> <a href="mailto:hello@monvsp.com">jimmy.rossignol@monvsp.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team_info">
+                            <H6>Jimmy Rossignol</H6>
+                            <P>Co-fondateur</P>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Meet-the-Team--> 
+
+    {% block javascripts %}
+        {% javascripts 
+                '@js' 
+        %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+    {% endblock %}
+{% endblock %}

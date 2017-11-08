@@ -1,0 +1,22 @@
+{% extends 'useradmin/admin_base.html.twig' %}
+
+{% block body %}
+    <div class="hold-transition skin-blue sidebar-mini">
+        {% include 'partials/admin_header.html.twig' %}
+        {% include 'partials/admin_sidebar.html.twig' %}
+    </div>
+
+    {% block javascripts %}
+        {% javascripts 
+            '@admin_js'
+            '@admin_plugins'
+        %}
+        <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+        <!-- Google-Font-->
+        <script>
+            $.widget.bridge('uibutton', $.ui.button);
+        </script>
+
+        {% endjavascripts %}
+    {% endblock %}
+{% endblock %}
