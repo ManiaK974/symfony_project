@@ -1,0 +1,152 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: security.yml }
+    - { resource: services.yml }
+
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    locale: en
+
+framework:
+    #esi: ~
+    #translator: { fallbacks: ['%locale%'] }
+    secret: '%secret%'
+    router:
+        resource: '%kernel.project_dir%/app/config/routing.yml'
+        strict_requirements: ~
+    form: ~
+    csrf_protection: ~
+    validation: { enable_annotations: true }
+    #serializer: { enable_annotations: true }
+    templating:
+        engines: ['twig']
+    default_locale: '%locale%'
+    trusted_hosts: ~
+    
+    session:
+        # https://symfony.com/doc/current/reference/configuration/framework.html#handler-id
+        handler_id: session.handler.native_file
+        save_path: '%kernel.project_dir%/var/sessions/%kernel.environment%'
+        cookie_lifetime: 1200 
+    fragments: ~
+    http_method_override: true
+    assets: ~
+    php_errors:
+        log: true
+
+# Twig Configuration
+twig:
+    debug: '%kernel.debug%'
+    strict_variables: '%kernel.debug%'
+
+# Doctrine Configuration
+doctrine:
+    dbal:
+        driver: pdo_mysql
+        host: '%database_host%'
+        port: '%database_port%'
+        dbname: '%database_name%'
+        user: '%database_user%'
+        password: '%database_password%'
+        charset: UTF8
+        # if using pdo_sqlite as your database driver:
+        #   1. add the path in parameters.yml
+        #     e.g. database_path: '%kernel.project_dir%/var/data/data.sqlite'
+        #   2. Uncomment database_path in parameters.yml.dist
+        #   3. Uncomment next line:
+        #path: '%database_path%'
+
+    orm:
+        auto_generate_proxy_classes: '%kernel.debug%'
+        naming_strategy: doctrine.orm.naming_strategy.underscore
+        auto_mapping: true
+
+# Swiftmailer Configuration
+swiftmailer:
+    transport: '%mailer_transport%'
+    host: '%mailer_host%'
+    username: '%mailer_user%'
+    password: '%mailer_password%'
+    spool: { type: memory }
+
+assetic:
+    debug:          '%kernel.debug%'
+    use_controller: '%kernel.debug%'
+    filters:
+        cssrewrite: ~
+    bundles:
+        - FrameworkBundle
+        - SecurityBundle
+        - TwigBundle
+        - MonologBundle
+        - SwiftmailerBundle
+        - DoctrineBundle
+        - AsseticBundle
+    assets:
+        js:
+            inputs:
+                - '@AppBundle/Resources/public/js/jquery.js'
+                - '@AppBundle/Resources/public/js/jquery.min.js'
+                - '@AppBundle/Resources/public/js/jquery.countdown.min.js'
+                - '@AppBundle/Resources/public/js/bootstrap-slider.min.js'
+                - '@AppBundle/Resources/public/js/bootstrap-slider.js'
+                - '@AppBundle/Resources/public/js/bootstrap.js'
+                - '@AppBundle/Resources/public/js/bootstrap.min.js'
+                - '@AppBundle/Resources/public/js/countdown_date.js'
+                - '@AppBundle/Resources/public/js/interface.js'
+                - '@AppBundle/Resources/public/js/owl.carousel.js'
+                - '@AppBundle/Resources/public/js/owl.carousel.min.js'
+                - '@AppBundle/Resources/public/js/slick.min.js'
+        css:
+            inputs:
+                - '@AppBundle/Resources/public/css/bootstrap-slider.css'
+                - '@AppBundle/Resources/public/css/bootstrap-slider.min.css'
+                - '@AppBundle/Resources/public/css/bootstrap.css'
+                - '@AppBundle/Resources/public/css/bootstrap.min.css'
+                - '@AppBundle/Resources/public/css/font-awesome.css'
+                - '@AppBundle/Resources/public/css/font-awesome.min.css'
+                - '@AppBundle/Resources/public/css/owl.carousel.css'
+                - '@AppBundle/Resources/public/css/owl.transitions.css'
+                - '@AppBundle/Resources/public/css/slick.css'
+                - '@AppBundle/Resources/public/css/style.css'
+        admin_css:
+            inputs:
+                - '@AppBundle/Resources/public/admin_css/*'
+                - '@AppBundle/Resources/public/admin_css/alt/*'
+                - '@AppBundle/Resources/public/admin_css/skins/*'
+        admin_js:
+            inputs:
+                - '@AppBundle/Resources/public/admin_js/pages/*'
+                - '@AppBundle/Resources/public/admin_js/*'
+        admin_plugins:
+            inputs:
+                - '@AppBundle/Resources/public/admin_plugins/*'
+        font-awesome-otf:
+            inputs: '%kernel.root_dir%/../vendor/fortawesome/font-awesome/fonts/FontAwesome.otf'
+            output: 'fonts/FontAwesome.otf'
+        font-awesome-eot:
+            inputs: '%kernel.root_dir%/../vendor/fortawesome/font-awesome/fonts/fontawesome-webfont.eot'
+            output: 'fonts/fontawesome-webfont.eot'
+        font-awesome-svg:
+            inputs: '%kernel.root_dir%/../vendor/fortawesome/font-awesome/fonts/fontawesome-webfont.svg'
+            output: 'fonts/fontawesome-webfont.svg'
+        font-awesome-ttf:
+            inputs: '%kernel.root_dir%/../vendor/fortawesome/font-awesome/fonts/fontawesome-webfont.ttf'
+            output: 'fonts/fontawesome-webfont.ttf'
+        glyphicons-eot:
+            inputs: '%kernel.root_dir%/../vendor/fortawesome/font-awesome/fonts/glyphicons-halflings-regular.eot'
+            output: 'fonts/glyphicons-halflings-regular.eot'
+        glyphicons-svg:
+            inputs: '%kernel.root_dir%/../vendor/fortawesome/font-awesome/fonts/glyphicons-halflings-regular.svg'
+            output: 'fonts/glyphicons-halflings-regular.svg'
+        glyphicons-ttf:
+            inputs: '%kernel.root_dir%/../vendor/fortawesome/font-awesome/fonts/glyphicons-halflings-regular.ttf'
+            output: 'fonts/glyphicons-halflings-regular.ttf'
+        glyphicons-woff:
+            inputs: '%kernel.root_dir%/../vendor/fortawesome/font-awesome/fonts/glyphicons-halflings-regular.woff'
+            output: 'fonts/glyphicons-halflings-regular.woff'
+        glyphicons-woff2:
+            inputs: '%kernel.root_dir%/../vendor/fortawesome/font-awesome/fonts/glyphicons-halflings-regular.woff2'
+            output: 'fonts/glyphicons-halflings-regular.woff2'
